@@ -1,7 +1,7 @@
 Source: <br />
 https://ionicframework.com/docs/native/fingerprint-aio/
 
-Works for ANDROID (Tested) + IOS 
+Works for ANDROID (Tested) + IOS (Tested)
 
 $ ionic cordova plugin add cordova-plugin-fingerprint-aio <br />
 $ npm install --save @ionic-native/fingerprint-aio
