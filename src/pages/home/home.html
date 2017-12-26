@@ -1,14 +1,18 @@
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+
+  <ion-navbar color="dark">
+    <ion-title>Home</ion-title>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-item no-lines text-wrap no-padding>
+      Press bellow button to check the fingerprint authentication.
+  </ion-item>
+  <button ion-button icon-only (click)="scan()">
+      <ion-icon name="md-finger-print"></ion-icon>
+  </button>
 </ion-content>
