@@ -3,7 +3,7 @@ https://ionicframework.com/docs/native/fingerprint-aio/
 
 Works for ANDROID (Tested) + IOS (Tested) <br />
 
-    if fingerprint sensor is not available sowing message that it's not available. <br />
+  if fingerprint sensor is not available sowing message that it's not available. <br />
 
 $ ionic cordova plugin add cordova-plugin-fingerprint-aio <br />
 $ npm install --save @ionic-native/fingerprint-aio
