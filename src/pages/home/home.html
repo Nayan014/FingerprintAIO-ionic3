@@ -9,10 +9,14 @@
 
 
 <ion-content padding>
-  <ion-item no-lines text-wrap no-padding>
+  <ion-item no-lines text-wrap no-padding *ngIf="showButton">
       Press bellow button to check the fingerprint authentication.
   </ion-item>
-  <button ion-button icon-only (click)="scan()">
+  <button ion-button icon-only (click)="scan()" *ngIf="showButton">
       <ion-icon name="md-finger-print"></ion-icon>
   </button>
+
+  <ion-item no-lines text-wrap no-padding *ngIf="!showButton">
+    no fingerprint sensor found.
+  </ion-item>
 </ion-content>

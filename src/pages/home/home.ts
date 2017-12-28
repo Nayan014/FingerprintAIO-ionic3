@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
@@ -10,10 +10,31 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 })
 export class HomePage {
 
+  showButton:boolean = false;
+
   constructor(
+    private platform: Platform,
     public navCtrl: NavController,
     public navParams: NavParams,
     private faio: FingerprintAIO) {
+
+    this.fingerprintAvailable();
+  }
+
+  async fingerprintAvailable(){
+    try{
+      await this.platform.ready();
+      const available = await this.faio.isAvailable();
+      if(available == "OK"){
+        this.showButton = true;
+      }
+      else{
+        this.showButton = false;
+      }
+    }
+    catch(e){
+      console.log(e);
+    }
   }
 
   scan(){
