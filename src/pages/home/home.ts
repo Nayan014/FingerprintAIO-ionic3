@@ -25,7 +25,9 @@ export class HomePage {
     try{
       await this.platform.ready();
       const available = await this.faio.isAvailable();
-      if(available == "OK"){
+      // available == "OK" --> Android
+      // available == "Available" --> Ios
+      if(available == "OK" || available == "Available"){
         this.showButton = true;
       }
       else{
